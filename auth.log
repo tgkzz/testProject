@@ -1,0 +1,95 @@
+INFO: 2024/01/25 10:34:30 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 10:37:50 main.go:42: open "./sql/init.sql": The filename, directory name, or volume label syntax is incorrect.
+ERROR: 2024/01/25 10:38:34 main.go:42: open "./database/init.sql": The filename, directory name, or volume label syntax is incorrect.
+INFO: 2024/01/25 10:41:38 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 10:41:45 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 10:42:27 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 10:45:12 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 10:46:17 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 10:46:48 personhandler.go:39: successfully finished deletion operation
+INFO: 2024/01/25 10:47:04 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 10:47:41 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 10:48:18 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 10:49:28 personhandler.go:39: successfully finished deletion operation
+INFO: 2024/01/25 18:19:35 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 18:20:39 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 18:35:33 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 18:38:33 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 18:39:34 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 18:43:39 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 18:45:01 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 18:45:07 personhandler.go:18: invalid data
+ERROR: 2024/01/25 18:45:24 personhandler.go:18: invalid data
+INFO: 2024/01/25 18:49:55 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 18:50:00 personhandler.go:18: invalid data
+INFO: 2024/01/25 18:52:15 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 18:52:19 personhandler.go:18: invalid data
+INFO: 2024/01/25 18:53:29 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 18:53:32 personhandler.go:18: invalid data
+INFO: 2024/01/25 19:06:13 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 19:06:16 personhandler.go:18: invalid data
+ERROR: 2024/01/25 19:06:40 personhandler.go:18: invalid data
+INFO: 2024/01/25 19:07:03 personhandler.go:23: successfully finished create operation
+INFO: 2024/01/25 19:17:18 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 19:17:22 personhandler.go:19: Get "https://api.nationalize.io/?name=Tussupbekov": dial tcp: lookup api.nationalize.io: no such host
+ERROR: 2024/01/25 19:19:04 personhandler.go:13: invalid character '}' looking for beginning of object key string
+ERROR: 2024/01/25 19:19:20 personhandler.go:19: firstname and lastname must be not empty
+INFO: 2024/01/25 19:19:48 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 19:19:52 personhandler.go:19: invalid data
+INFO: 2024/01/25 19:20:14 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 19:20:47 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 19:24:47 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 19:24:50 personhandler.go:28: successfully finished create operation
+INFO: 2024/01/25 19:24:58 personhandler.go:28: successfully finished create operation
+INFO: 2024/01/25 19:26:26 personhandler.go:28: successfully finished create operation
+ERROR: 2024/01/25 19:38:05 personhandler.go:18: name and surname must be not empty
+INFO: 2024/01/25 19:38:05 personhandler.go:28: successfully finished create operation
+ERROR: 2024/01/25 19:38:42 personhandler.go:18: name and surname must be not empty
+INFO: 2024/01/25 19:38:42 personhandler.go:28: successfully finished create operation
+ERROR: 2024/01/25 19:40:17 personhandler.go:18: name and surname must be not empty
+INFO: 2024/01/25 19:40:17 personhandler.go:28: successfully finished create operation
+INFO: 2024/01/25 20:50:45 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 20:51:03 personhandler.go:19: name and surname must be not empty
+INFO: 2024/01/25 20:51:03 personhandler.go:31: successfully finished create operation
+INFO: 2024/01/25 20:51:31 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 20:52:08 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 20:52:10 personhandler.go:19: name and surname must be not empty
+ERROR: 2024/01/25 20:52:14 personhandler.go:19: name and surname must be not empty
+ERROR: 2024/01/25 20:52:22 personhandler.go:19: name and surname must be not empty
+INFO: 2024/01/25 20:53:12 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 20:53:15 personhandler.go:19: name and surname must be not empty
+ERROR: 2024/01/25 20:55:36 personhandler.go:43: strconv.Atoi: parsing "asdasdasdsa": invalid syntax
+ERROR: 2024/01/25 20:56:54 personhandler.go:43: invalid format: leading zeros or plus signs are not allowed
+INFO: 2024/01/25 20:57:54 personhandler.go:48: successfully finished deletion operation
+INFO: 2024/01/25 21:02:43 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 21:02:46 personhandler.go:42: Delete person by id: no rows affected, person with id 1230912831 does not exist
+ERROR: 2024/01/25 21:03:07 personhandler.go:42: Delete person by id: strconv.Atoi: parsing "lil": invalid syntax
+ERROR: 2024/01/25 21:03:21 personhandler.go:42: Delete person by id: strconv.Atoi: parsing "lil": invalid syntax
+INFO: 2024/01/25 23:07:04 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 23:07:15 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 23:08:05 personhandler.go:48: Atoi : %!s(MISSING)
+INFO: 2024/01/25 23:08:50 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 23:08:53 personhandler.go:48: Atoi : %!s(MISSING)
+ERROR: 2024/01/25 23:10:04 personhandler.go:48: Atoi : %!s(MISSING)
+INFO: 2024/01/25 23:10:38 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 23:10:41 personhandler.go:50: Atoi : %!s(MISSING)
+INFO: 2024/01/25 23:14:27 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 23:14:30 personhandler.go:72: GetUserByFilter: sql: converting argument $1 type: unsupported type []interface {}, a slice of interface
+INFO: 2024/01/25 23:16:59 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/25 23:30:34 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 23:30:37 personhandler.go:78: GetUserByFilter: No records found
+ERROR: 2024/01/25 23:31:30 personhandler.go:78: GetUserByFilter: No records found
+INFO: 2024/01/25 23:37:02 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/25 23:38:19 personhandler.go:21: Create new user: surname cannot be empty
+INFO: 2024/01/25 23:38:26 personhandler.go:32: successfully finished create operation
+INFO: 2024/01/25 23:38:36 personhandler.go:32: successfully finished create operation
+INFO: 2024/01/25 23:38:48 personhandler.go:32: successfully finished create operation
+INFO: 2024/01/25 23:39:00 personhandler.go:32: successfully finished create operation
+INFO: 2024/01/25 23:39:24 personhandler.go:32: successfully finished create operation
+ERROR: 2024/01/25 23:44:14 personhandler.go:91: GetUserByFilter: No records found
+ERROR: 2024/01/26 00:06:20 personhandler.go:45: GetUserById sql: no rows in result set
+INFO: 2024/01/26 00:07:33 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/26 00:07:35 personhandler.go:46: GetUserById sql: no rows in result set
+INFO: 2024/01/26 00:09:19 personhandler.go:32: successfully finished create operation
+INFO: 2024/01/26 00:09:32 personhandler.go:32: successfully finished create operation
+ERROR: 2024/01/26 00:09:58 personhandler.go:21: Create new user: name and surname must be not empty
