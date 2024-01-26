@@ -48,6 +48,6 @@ func main() {
 
 	h := handler.NewHandler(s, infoLog, errLog)
 
-	errLog.Fatal(server.StartServer(cfg, h.Routes(), infoLog))
+	errLog.Fatal(server.StartServer(cfg, h.Routes(infoLog, errLog), infoLog))
 
 }

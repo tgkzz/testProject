@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const dbpath = "./database/init.sql"
+const dbpath = "./database/schema.sql"
 
 func LoadDB(driverName, dataSourceName string) (*sql.DB, error) {
 	db, err := sql.Open(driverName, dataSourceName)
