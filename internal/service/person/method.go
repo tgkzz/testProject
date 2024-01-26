@@ -23,6 +23,18 @@ func StrictAtoi(s string) (int, error) {
 	}
 }
 
+func isValidFilter(filter models.Filter) bool {
+	if filter.AgeTo <= 0 || filter.AgeFrom <= 0 || filter.Id <= 0 {
+		return false
+	}
+
+	return true
+}
+
+func isValidUpdateParams(data models.Person) bool {
+	return data != models.Person{}
+}
+
 func fetchData(baseURL, queryKey, queryValue string, target interface{}) error {
 	parsedURL, err := url.Parse(baseURL)
 	if err != nil {
@@ -78,7 +90,9 @@ func (p PersonService) DeletePersonById(id string) error {
 }
 
 func (p PersonService) GetUserByFilter(filter models.Filter) ([]models.Person, error) {
-	// TODO: Validate Filter
+	if !isValidFilter(filter) {
+		return []models.Person{}, fmt.Errorf("invalid filter")
+	}
 
 	return p.repo.GetUserByFilter(filter)
 }
@@ -89,6 +103,19 @@ func (p PersonService) GetUserById(id string) (models.Person, error) {
 		return models.Person{}, err
 	}
 	return p.repo.GetUserById(parsedId)
+}
+
+func (p PersonService) UpdateUserById(id string, data models.Person) error {
+	parsedId, err := StrictAtoi(id)
+	if err != nil {
+		return err
+	}
+
+	if !isValidUpdateParams(data) {
+		return fmt.Errorf("json may be empty or filled in incorrectly")
+	}
+
+	return p.repo.UpdateUserById(parsedId, data)
 }
 
 func (p PersonService) CreateNewUser(person models.Person) error {

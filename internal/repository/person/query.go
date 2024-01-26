@@ -2,6 +2,7 @@ package person
 
 import (
 	"fmt"
+	"strings"
 	"testProject/internal/models"
 )
 
@@ -101,6 +102,53 @@ func (p PersonRepo) GetUserByFilter(filter models.Filter) ([]models.Person, erro
 }
 
 // UPDATE
+
+func (p PersonRepo) UpdateUserById(id int, data models.Person) error {
+	query := "UPDATE person SET "
+
+	var params []interface{}
+	paramID := 1
+
+	if data.Name != "" {
+		query += fmt.Sprintf("name = $%d, ", paramID)
+		params = append(params, data.Name)
+		paramID++
+	}
+
+	if data.Surname != "" {
+		query += fmt.Sprintf("surname = $%d, ", paramID)
+		params = append(params, data.Surname)
+		paramID++
+	}
+	if data.Patronymic != "" {
+		query += fmt.Sprintf("patronymic = $%d, ", paramID)
+		params = append(params, data.Patronymic)
+		paramID++
+	}
+	if data.Age != 0 {
+		query += fmt.Sprintf("age = $%d, ", paramID)
+		params = append(params, data.Age)
+		paramID++
+	}
+	if data.Gender != "" {
+		query += fmt.Sprintf("gender = $%d, ", paramID)
+		params = append(params, data.Gender)
+		paramID++
+	}
+	if data.CountryId != "" {
+		query += fmt.Sprintf("countryid = $%d, ", paramID)
+		params = append(params, data.CountryId)
+		paramID++
+	}
+	query = strings.TrimSuffix(query, ", ")
+
+	query += fmt.Sprintf(" WHERE id = $%d;", paramID)
+	params = append(params, id)
+
+	_, err := p.DB.Exec(query, params...)
+
+	return err
+}
 
 // DELETE
 

@@ -15,6 +15,7 @@ type IPersonService interface {
 	DeletePersonById(id string) error
 	GetUserByFilter(filter models.Filter) ([]models.Person, error)
 	GetUserById(id string) (models.Person, error)
+	UpdateUserById(id string, person models.Person) error
 }
 
 func NewPersonService(repo person.IPersonRepo, url models.Url) *PersonService {

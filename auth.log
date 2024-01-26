@@ -93,3 +93,23 @@ ERROR: 2024/01/26 00:07:35 personhandler.go:46: GetUserById sql: no rows in resu
 INFO: 2024/01/26 00:09:19 personhandler.go:32: successfully finished create operation
 INFO: 2024/01/26 00:09:32 personhandler.go:32: successfully finished create operation
 ERROR: 2024/01/26 00:09:58 personhandler.go:21: Create new user: name and surname must be not empty
+INFO: 2024/01/26 09:49:11 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/26 09:49:57 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/26 09:51:53 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/26 09:52:26 personhandler.go:120: Bind JSON: json: Unmarshal(non-pointer models.Person)
+INFO: 2024/01/26 09:53:00 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/26 09:53:03 personhandler.go:126: UpdateUserById: sql: converting argument $1 type: unsupported type []interface {}, a slice of interface
+INFO: 2024/01/26 09:53:41 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/26 09:54:02 personhandler.go:126: UpdateUserById: pq: got 1 parameters but the statement requires 2
+INFO: 2024/01/26 09:54:42 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/26 09:54:44 personhandler.go:131: successfully finished update operation
+ERROR: 2024/01/26 10:10:50 personhandler.go:126: UpdateUserById: pq: ошибка синтаксиса (примерное положение: "WHERE")
+ERROR: 2024/01/26 10:11:09 personhandler.go:120: Bind JSON: json: cannot unmarshal string into Go struct field Person.age of type int
+ERROR: 2024/01/26 10:11:15 personhandler.go:126: UpdateUserById: pq: ошибка синтаксиса (примерное положение: "WHERE")
+INFO: 2024/01/26 10:11:56 personhandler.go:131: successfully finished update operation
+INFO: 2024/01/26 10:12:07 personhandler.go:131: successfully finished update operation
+ERROR: 2024/01/26 10:13:40 personhandler.go:126: UpdateUserById: pq: ошибка синтаксиса (примерное положение: "WHERE")
+INFO: 2024/01/26 10:17:52 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/26 10:17:53 personhandler.go:126: UpdateUserById: json may be empty or filled in incorrectly
+INFO: 2024/01/26 10:18:45 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/26 10:18:48 personhandler.go:126: UpdateUserById: json may be empty or filled in incorrectly

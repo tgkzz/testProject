@@ -14,6 +14,7 @@ type IPersonRepo interface {
 	GetUserById(id int) (models.Person, error)
 	GetUserByFilter(filter models.Filter) ([]models.Person, error)
 	DeleteById(id int) error
+	UpdateUserById(id int, data models.Person) error
 }
 
 func NewPersonRepository(DB *sql.DB) *PersonRepo {

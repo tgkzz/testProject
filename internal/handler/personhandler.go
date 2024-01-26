@@ -96,9 +96,14 @@ func (h Handler) GetPersonByFilter(c *gin.Context) {
 	result, err := h.service.Person.GetUserByFilter(filter)
 	if err != nil {
 		h.errLogger.Printf("GetUserByFilter: %s", err)
-		ErrorHandler(c, err, http.StatusInternalServerError)
+		if strings.Contains(err.Error(), "invalid filter") {
+			ErrorHandler(c, err, http.StatusBadRequest)
+		} else {
+			ErrorHandler(c, err, http.StatusInternalServerError)
+		}
 		return
 	}
+
 	if len(result) == 0 {
 		h.errLogger.Printf("GetUserByFilter: %s", fmt.Errorf("No records found"))
 		ErrorHandler(c, fmt.Errorf("No records found"), http.StatusNotFound)
@@ -106,6 +111,34 @@ func (h Handler) GetPersonByFilter(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, result)
+}
+
+func (h Handler) UpdateById(c *gin.Context) {
+	id := c.Param("id")
+	var person models.Person
+	if err := c.BindJSON(&person); err != nil {
+		h.errLogger.Printf("Bind JSON: %s", err)
+		ErrorHandler(c, err, http.StatusInternalServerError)
+		return
+	}
+
+	if err := h.service.Person.UpdateUserById(id, person); err != nil {
+		h.errLogger.Printf("UpdateUserById: %s", err)
+		if strings.Contains(err.Error(), "json may be empty or filled in incorrectly") {
+			ErrorHandler(c, err, http.StatusBadRequest)
+		} else {
+			ErrorHandler(c, err, http.StatusInternalServerError)
+
+		}
+		return
+	}
+
+	h.infoLogger.Print("successfully finished update operation")
+	response := map[string]string{
+		"status":  "success",
+		"message": "successfully update person",
+	}
+	c.JSON(http.StatusOK, response)
 }
 
 func (h Handler) DeleteById(c *gin.Context) {
