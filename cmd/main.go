@@ -27,18 +27,21 @@ func main() {
 	case 0:
 		cfgPath = "./.env"
 	default:
+		fmt.Println("Error while searching for config path. For detailed information, look at the logs")
 		errLog.Fatal("USAGE: go run [CONFIG_PATH]")
 	}
 
 	// init config
 	cfg, err := config.LoadConfig(cfgPath)
 	if err != nil {
+		fmt.Println("Error while loading config file. For detailed information, look at the logs")
 		errLog.Fatal(err)
 	}
 
 	//init db
 	db, err := repository.LoadDB(cfg.DB.DriverName, cfg.DB.DataSourceName)
 	if err != nil {
+		fmt.Println("Error while loading database. For detailed information, look at the logs")
 		errLog.Fatal(err)
 	}
 

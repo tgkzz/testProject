@@ -15,3 +15,5 @@ INFO: 2024/01/26 11:09:53 middleware.go:17: METHOD: PATCH, PATH: /api/update/9, 
 INFO: 2024/01/26 11:11:25 server.go:20: server is listening on http://localhost:8181
 INFO: 2024/01/26 11:11:33 personhandler.go:136: successfully finished update operation
 INFO: 2024/01/26 11:11:33 middleware.go:17: METHOD: PATCH, PATH: /api/update/9, STATUS: 500, DURATION: 5.7559ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/26 11:16:20 main.go:30: USAGE: go run [CONFIG_PATH]
+ERROR: 2024/01/26 11:21:54 main.go:31: USAGE: go run [CONFIG_PATH]
