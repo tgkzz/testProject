@@ -17,3 +17,66 @@ INFO: 2024/01/26 11:11:33 personhandler.go:136: successfully finished update ope
 INFO: 2024/01/26 11:11:33 middleware.go:17: METHOD: PATCH, PATH: /api/update/9, STATUS: 500, DURATION: 5.7559ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
 ERROR: 2024/01/26 11:16:20 main.go:30: USAGE: go run [CONFIG_PATH]
 ERROR: 2024/01/26 11:21:54 main.go:31: USAGE: go run [CONFIG_PATH]
+INFO: 2024/01/27 03:22:31 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/27 03:22:34 gethandler.go:69: GetUserById sql: no rows in result set
+INFO: 2024/01/27 03:22:34 middleware.go:17: METHOD: GET, PATH: /api/get/123, STATUS: 404, DURATION: 14.3074ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 03:22:45 gethandler.go:73: GetUserById strconv.Atoi: parsing "aslkdasda": invalid syntax
+INFO: 2024/01/27 03:22:45 middleware.go:17: METHOD: GET, PATH: /api/get/aslkdasda, STATUS: 500, DURATION: 790.2µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 03:23:11 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/27 03:23:18 gethandler.go:73: GetUserById strconv.Atoi: parsing "aslkdasda": invalid syntax
+INFO: 2024/01/27 03:23:18 middleware.go:17: METHOD: GET, PATH: /api/get/aslkdasda, STATUS: 500, DURATION: 0s, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 03:23:43 gethandler.go:73: GetUserById strconv.Atoi: parsing "aslkdasda": invalid syntax
+INFO: 2024/01/27 03:23:43 middleware.go:17: METHOD: GET, PATH: /api/get/aslkdasda, STATUS: 500, DURATION: 0s, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 03:24:37 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/27 03:24:48 gethandler.go:69: GetUserById strconv.Atoi: parsing "aslkdasda": invalid syntax
+INFO: 2024/01/27 03:24:48 middleware.go:17: METHOD: GET, PATH: /api/get/aslkdasda, STATUS: 404, DURATION: 630.2µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 03:26:23 posthandler.go:19: Create new user: name and surname must be not empty
+INFO: 2024/01/27 03:26:23 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 400, DURATION: 193.6µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 03:26:36 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 03:26:36 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 778.9832ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 03:26:58 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 03:26:58 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 165.6742ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 03:27:10 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 03:27:10 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 169.1965ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 03:27:31 posthandler.go:19: Create new user: surname cannot be empty
+INFO: 2024/01/27 03:27:31 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 500, DURATION: 163.4455ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 03:27:59 posthandler.go:19: Create new user: surname cannot be empty
+INFO: 2024/01/27 03:27:59 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 500, DURATION: 160.9723ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 03:28:19 posthandler.go:19: Create new user: surname cannot be empty
+INFO: 2024/01/27 03:28:19 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 500, DURATION: 169.2832ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:25:03 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/01/27 04:25:07 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:25:07 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 750.176ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:27:09 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:27:09 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 825.0271ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:27:20 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:27:20 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 165.3206ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:27:36 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:27:36 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 164.6245ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:27:55 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:27:55 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 167.9665ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:28:23 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:28:23 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 165.1008ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:28:51 posthandler.go:30: successfully finished create operation
+INFO: 2024/01/27 04:28:51 middleware.go:17: METHOD: POST, PATH: /api/create, STATUS: 200, DURATION: 162.4218ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:29:08 middleware.go:17: METHOD: GET, PATH: /api/get/26, STATUS: 200, DURATION: 3.1331ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 04:29:22 gethandler.go:69: GetUserById sql: no rows in result set
+INFO: 2024/01/27 04:29:22 middleware.go:17: METHOD: GET, PATH: /api/get/1, STATUS: 404, DURATION: 1.1581ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:29:28 middleware.go:17: METHOD: GET, PATH: /api/get/18, STATUS: 200, DURATION: 696.5µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 04:29:44 gethandler.go:45: GetUserByFilter: invalid filter
+INFO: 2024/01/27 04:29:44 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 400, DURATION: 930.1µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 04:29:51 gethandler.go:45: GetUserByFilter: invalid filter
+INFO: 2024/01/27 04:29:51 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 400, DURATION: 660.7µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:30:55 server.go:20: server is listening on http://localhost:8181
+ERROR: 2024/01/27 04:31:00 gethandler.go:55: GetUserByFilter: No records found
+INFO: 2024/01/27 04:31:00 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 404, DURATION: 6.5781ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:31:08 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 1.3354ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:31:26 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 955.5µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:31:38 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 1.0424ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:32:03 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 784.3µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:32:06 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 536µs, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:32:15 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 1.076ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+ERROR: 2024/01/27 04:34:25 gethandler.go:55: GetUserByFilter: No records found
+INFO: 2024/01/27 04:34:25 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 404, DURATION: 3.0726ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)
+INFO: 2024/01/27 04:34:37 patchhandler.go:30: successfully finished update operation
+INFO: 2024/01/27 04:34:37 middleware.go:17: METHOD: PATCH, PATH: /api/update/9, STATUS: 200, DURATION: 2.7102ms, IP: 127.0.0.1, MESSAGE: %!s(MISSING)

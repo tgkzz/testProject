@@ -33,7 +33,7 @@ func FetchData(baseURL, queryKey, queryValue string, target interface{}) error {
 
 func SelectNation(probabilities []models.NationalityProbability) (string, error) {
 	if len(probabilities) == 0 {
-		return "", fmt.Errorf("surname cannot be empty")
+		return "", nil
 	}
 
 	result := probabilities[0].CountryID

@@ -11,7 +11,6 @@ import (
 	"testProject/logger"
 )
 
-// TODO: Start server pls
 func main() {
 	infoLog, errLog, err := logger.NewLogger()
 	if err != nil {

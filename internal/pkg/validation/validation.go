@@ -14,7 +14,7 @@ func IsValidUpdateParams(data models.Person) bool {
 }
 
 func IsValidFilter(filter models.Filter) bool {
-	if filter.AgeTo <= 0 || filter.AgeFrom <= 0 || filter.Id <= 0 {
+	if filter.AgeTo < 0 || filter.AgeFrom < 0 || filter.Id < 0 {
 		return false
 	}
 
