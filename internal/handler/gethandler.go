@@ -1,31 +1,27 @@
 package handler
 
 import (
-	"fmt"
+	"errors"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"strconv"
-	"strings"
 	"testProject/internal/models"
+	"testProject/internal/pkg"
 )
 
 func (h Handler) GetPersonByFilter(c *gin.Context) {
-	id, err := strconv.Atoi(c.Query("id"))
+	id, err := pkg.StrictAtoi(c.Query("id"))
 	if err != nil && c.Query("id") != "" {
-		h.errLogger.Printf("Atoi : %s")
-		ErrorHandler(c, err, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
 		return
 	}
-	ageTo, err := strconv.Atoi(c.Query("ageto"))
+	ageTo, err := pkg.StrictAtoi(c.Query("ageto"))
 	if err != nil && c.Query("ageto") != "" {
-		h.errLogger.Printf("Atoi : %s")
-		ErrorHandler(c, err, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
 		return
 	}
-	ageFrom, err := strconv.Atoi(c.Query("agefrom"))
+	ageFrom, err := pkg.StrictAtoi(c.Query("agefrom"))
 	if err != nil && c.Query("agefrom") != "" {
-		h.errLogger.Printf("Atoi : %s")
-		ErrorHandler(c, err, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
 		return
 	}
 
@@ -42,18 +38,13 @@ func (h Handler) GetPersonByFilter(c *gin.Context) {
 
 	result, err := h.service.Person.GetUserByFilter(filter)
 	if err != nil {
-		h.errLogger.Printf("GetUserByFilter: %s", err)
-		if strings.Contains(err.Error(), "invalid filter") {
+		if errors.Is(err, models.ErrInvalidFilter) {
 			ErrorHandler(c, err, http.StatusBadRequest)
+		} else if errors.Is(err, models.ErrSqlNoRows) {
+			ErrorHandler(c, err, http.StatusNotFound)
 		} else {
 			ErrorHandler(c, err, http.StatusInternalServerError)
 		}
-		return
-	}
-
-	if len(result) == 0 {
-		h.errLogger.Printf("GetUserByFilter: %s", fmt.Errorf("No records found"))
-		ErrorHandler(c, fmt.Errorf("No records found"), http.StatusNotFound)
 		return
 	}
 
@@ -65,20 +56,11 @@ func (h Handler) GetPersonById(c *gin.Context) {
 
 	result, err := h.service.Person.GetUserById(id)
 	if err != nil {
-		if strings.Contains(err.Error(), "sql: no rows in result set") || strings.Contains(err.Error(), "strconv.Atoi") {
-			h.errLogger.Printf("GetUserById %s", err.Error())
-			ErrorHandler(c, fmt.Errorf("GetUserById %s", err.Error()), http.StatusNotFound)
+		if errors.Is(err, models.ErrSqlNoRows) || errors.Is(err, models.ErrAtoi) || errors.Is(err, models.ErrEmptyResult) {
+			ErrorHandler(c, err, http.StatusNotFound)
 			return
 		}
-		h.errLogger.Printf("GetUserById %s", err)
 		ErrorHandler(c, err, http.StatusInternalServerError)
-		return
-	}
-
-	var emptyPerson models.Person
-	if result == emptyPerson {
-		h.errLogger.Printf("GetUserById %s", "empty string")
-		ErrorHandler(c, fmt.Errorf("GetUserById %s", "empty string"), http.StatusNotFound)
 		return
 	}
 

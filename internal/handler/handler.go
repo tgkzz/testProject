@@ -1,20 +1,15 @@
 package handler
 
 import (
-	"log"
 	"testProject/internal/service"
 )
 
 type Handler struct {
-	service    *service.Service
-	infoLogger *log.Logger
-	errLogger  *log.Logger
+	service *service.Service
 }
 
-func NewHandler(service *service.Service, infoLog, errLog *log.Logger) *Handler {
+func NewHandler(service *service.Service) *Handler {
 	return &Handler{
-		service:    service,
-		infoLogger: infoLog,
-		errLogger:  errLog,
+		service: service,
 	}
 }

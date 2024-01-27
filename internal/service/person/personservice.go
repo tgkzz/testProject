@@ -1,13 +1,16 @@
 package person
 
 import (
+	"log"
 	"testProject/internal/models"
 	"testProject/internal/repository/person"
 )
 
 type PersonService struct {
-	repo person.IPersonRepo
-	URLs models.Url
+	repo       person.IPersonRepo
+	URLs       models.Url
+	infoLogger *log.Logger
+	errLogger  *log.Logger
 }
 
 type IPersonService interface {
@@ -18,9 +21,11 @@ type IPersonService interface {
 	UpdateUserById(id string, person models.Person) error
 }
 
-func NewPersonService(repo person.IPersonRepo, url models.Url) *PersonService {
+func NewPersonService(repo person.IPersonRepo, url models.Url, infoLogger, errLogger *log.Logger) *PersonService {
 	return &PersonService{
-		repo: repo,
-		URLs: url,
+		repo:       repo,
+		URLs:       url,
+		infoLogger: infoLogger,
+		errLogger:  errLogger,
 	}
 }

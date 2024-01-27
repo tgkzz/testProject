@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"github.com/joho/godotenv"
 	"os"
 	"testProject/internal/models"
@@ -15,7 +16,7 @@ type Config struct {
 
 type DB struct {
 	DriverName     string `env:"DRIVERNAME"`
-	DataSourceName string `env:"DATASOURCENAME"`
+	DataSourceName string
 }
 
 func LoadConfig(path string) (Config, error) {
@@ -23,12 +24,18 @@ func LoadConfig(path string) (Config, error) {
 		return Config{}, err
 	}
 
+	dataSource := fmt.Sprintf("%s://%s:%s@%s:%s/%s?sslmode=disable",
+		os.Getenv("DBDRIVER"), os.Getenv("DBUSER"),
+		os.Getenv("DBPASS"), os.Getenv("DBHOST"),
+		os.Getenv("DBPORT"), os.Getenv("DBNAME"),
+	)
+
 	cfg := Config{
 		Host: os.Getenv("HOST"),
 		Port: os.Getenv("PORT"),
 		DB: DB{
 			DriverName:     os.Getenv("DRIVERNAME"),
-			DataSourceName: os.Getenv("DATASOURCENAME"),
+			DataSourceName: dataSource,
 		},
 		URL: models.Url{
 			AgeURL:         os.Getenv("AGEURL"),

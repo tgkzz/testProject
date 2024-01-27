@@ -1,14 +1,13 @@
-package api
+package person
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"net/url"
 	"testProject/internal/models"
 )
 
-func FetchData(baseURL, queryKey, queryValue string, target interface{}) error {
+func (p PersonService) fetchData(baseURL, queryKey, queryValue string, target interface{}) error {
 	parsedURL, err := url.Parse(baseURL)
 	if err != nil {
 		return err
@@ -20,20 +19,21 @@ func FetchData(baseURL, queryKey, queryValue string, target interface{}) error {
 
 	resp, err := http.Get(parsedURL.String())
 	if err != nil {
-		return err
+		p.errLogger.Print(err)
+		return models.ErrServiceUnavailable
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("bad status code: %d", resp.StatusCode)
+		return models.ErrBadStatusCode
 	}
 
 	return json.NewDecoder(resp.Body).Decode(target)
 }
 
-func SelectNation(probabilities []models.NationalityProbability) (string, error) {
+func SelectNation(probabilities []models.NationalityProbability) string {
 	if len(probabilities) == 0 {
-		return "", nil
+		return ""
 	}
 
 	result := probabilities[0].CountryID
@@ -46,5 +46,5 @@ func SelectNation(probabilities []models.NationalityProbability) (string, error)
 		}
 	}
 
-	return result, nil
+	return result
 }

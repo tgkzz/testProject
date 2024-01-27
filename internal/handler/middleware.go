@@ -14,7 +14,7 @@ func (h Handler) GinLogger(infoLogger *log.Logger, errLogger *log.Logger) gin.Ha
 
 		status := c.Writer.Status()
 
-		infoLogger.Printf("METHOD: %s, PATH: %s, STATUS: %d, DURATION: %v, IP: %s, MESSAGE: %s",
+		infoLogger.Printf("METHOD: %s, PATH: %s, STATUS: %d, DURATION: %v, IP: %s",
 			c.Request.Method,
 			c.Request.URL.Path,
 			status,

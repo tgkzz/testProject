@@ -1,4 +1,4 @@
-package validation
+package pkg
 
 import (
 	"strings"
@@ -15,6 +15,10 @@ func IsValidUpdateParams(data models.Person) bool {
 
 func IsValidFilter(filter models.Filter) bool {
 	if filter.AgeTo < 0 || filter.AgeFrom < 0 || filter.Id < 0 {
+		return false
+	}
+
+	if filter.AgeFrom > filter.AgeTo {
 		return false
 	}
 

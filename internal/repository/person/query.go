@@ -1,6 +1,8 @@
 package person
 
 import (
+	"database/sql"
+	"errors"
 	"fmt"
 	"strings"
 	"testProject/internal/models"
@@ -24,7 +26,10 @@ func (p PersonRepo) GetUserById(id int) (models.Person, error) {
 
 	query := "SELECT id, name, surname, patronymic, age, gender, countryid FROM person WHERE id = $1"
 
-	if err := p.DB.QueryRow(query, id).Scan(&result.Id, &result.Name, &result.Surname, &result.Patronymic, &result.Age, &result.Gender, &result.CountryId); err != nil {
+	err := p.DB.QueryRow(query, id).Scan(&result.Id, &result.Name, &result.Surname, &result.Patronymic, &result.Age, &result.Gender, &result.CountryId)
+	if errors.Is(err, sql.ErrNoRows) {
+		return models.Person{}, models.ErrSqlNoRows
+	} else if err != nil {
 		return models.Person{}, err
 	}
 
@@ -166,7 +171,7 @@ func (p PersonRepo) DeleteById(id int) error {
 	}
 
 	if rows == 0 {
-		return fmt.Errorf("no rows affected, person with id %d does not exist", id)
+		return models.ErrNoRowsAffected
 	}
 
 	return nil
