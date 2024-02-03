@@ -25,6 +25,18 @@ func (h Handler) GetPersonByFilter(c *gin.Context) {
 		return
 	}
 
+	limit, err := pkg.StrictAtoi(c.Query("limit"))
+	if err != nil && c.Query("limit") != "" {
+		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		return
+	}
+
+	offset, err := pkg.StrictAtoi(c.Query("offset"))
+	if err != nil {
+		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		return
+	}
+
 	filter := models.Filter{
 		Id:          id,
 		Name:        c.Query("name"),
@@ -34,6 +46,8 @@ func (h Handler) GetPersonByFilter(c *gin.Context) {
 		AgeFrom:     ageFrom,
 		Gender:      c.Query("gender"),
 		Nationality: c.Query("nation"),
+		Limit:       limit,
+		Offset:      offset,
 	}
 
 	result, err := h.service.Person.GetUserByFilter(filter)

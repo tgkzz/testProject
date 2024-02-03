@@ -16,4 +16,5 @@ const (
 	ErrServiceUnavailable  = constError("unable to connect to api")
 	ErrSqlNoRows           = constError("The result query gave no object to show")
 	ErrEmptyResult         = constError("empty result")
+	ErrInvalidPagination   = constError("invalid pagination data")
 )

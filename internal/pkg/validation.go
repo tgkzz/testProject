@@ -24,3 +24,11 @@ func IsValidFilter(filter models.Filter) bool {
 
 	return true
 }
+
+func IsValidPagination(filter models.Filter) bool {
+	if filter.Limit < 0 || filter.Offset < 0 {
+		return false
+	}
+
+	return true
+}

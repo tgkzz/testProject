@@ -28,6 +28,11 @@ func (p PersonService) GetUserByFilter(filter models.Filter) ([]models.Person, e
 		return []models.Person{}, models.ErrInvalidFilter
 	}
 
+	if !pkg.IsValidPagination(filter) {
+		p.errLogger.Printf(models.ErrInvalidPagination.Error())
+		return []models.Person{}, models.ErrInvalidPagination
+	}
+
 	result, err := p.repo.GetUserByFilter(filter)
 	if err != nil {
 		p.errLogger.Print(err)

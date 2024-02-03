@@ -86,6 +86,20 @@ func (p PersonRepo) GetUserByFilter(filter models.Filter) ([]models.Person, erro
 		paramID++
 	}
 
+	query += " ORDER BY id"
+
+	if filter.Limit != 0 {
+		query += fmt.Sprintf(" LIMIT $%d", paramID)
+		params = append(params, filter.Limit)
+		paramID++
+	}
+
+	if filter.Offset != 0 {
+		query += fmt.Sprintf(" OFFSET $%d", paramID)
+		params = append(params, filter.Offset)
+		paramID++
+	}
+
 	rows, err := p.DB.Query(query, params...)
 	if err != nil {
 		return nil, err

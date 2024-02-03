@@ -9,4 +9,7 @@ type Filter struct {
 	AgeTo       int
 	Gender      string
 	Nationality string
+	// pagination
+	Limit  int
+	Offset int
 }
