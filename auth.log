@@ -1,0 +1,5 @@
+INFO: 2024/02/04 06:02:56 server.go:20: server is listening on http://localhost:8181
+INFO: 2024/02/04 06:07:31 method.go:47: successfully get person
+INFO: 2024/02/04 06:07:31 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 200, DURATION: 3.6605ms, IP: 127.0.0.1
+INFO: 2024/02/04 06:08:39 middleware.go:17: METHOD: GET, PATH: /api/get, STATUS: 404, DURATION: 0s, IP: 127.0.0.1
+INFO: 2024/02/04 06:09:55 server.go:20: server is listening on http://localhost:8181

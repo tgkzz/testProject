@@ -11,29 +11,29 @@ import (
 func (h Handler) GetPersonByFilter(c *gin.Context) {
 	id, err := pkg.StrictAtoi(c.Query("id"))
 	if err != nil && c.Query("id") != "" {
-		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusBadRequest)
 		return
 	}
 	ageTo, err := pkg.StrictAtoi(c.Query("ageto"))
 	if err != nil && c.Query("ageto") != "" {
-		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusBadRequest)
 		return
 	}
 	ageFrom, err := pkg.StrictAtoi(c.Query("agefrom"))
 	if err != nil && c.Query("agefrom") != "" {
-		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusBadRequest)
 		return
 	}
 
 	limit, err := pkg.StrictAtoi(c.Query("limit"))
 	if err != nil && c.Query("limit") != "" {
-		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusBadRequest)
 		return
 	}
 
 	offset, err := pkg.StrictAtoi(c.Query("offset"))
 	if err != nil {
-		ErrorHandler(c, models.ErrAtoi, http.StatusNotFound)
+		ErrorHandler(c, models.ErrAtoi, http.StatusBadRequest)
 		return
 	}
 
