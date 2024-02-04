@@ -52,7 +52,7 @@ func (h Handler) GetPersonByFilter(c *gin.Context) {
 
 	result, err := h.service.Person.GetUserByFilter(filter)
 	if err != nil {
-		if errors.Is(err, models.ErrInvalidFilter) {
+		if errors.Is(err, models.ErrInvalidFilter) || errors.Is(err, models.ErrInvalidPagination) {
 			ErrorHandler(c, err, http.StatusBadRequest)
 		} else if errors.Is(err, models.ErrSqlNoRows) {
 			ErrorHandler(c, err, http.StatusNotFound)
